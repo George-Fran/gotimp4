@@ -8,9 +8,7 @@ import urllib.parse  # Importar urllib.parse para manejar la codificación y dec
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # Necesario para usar sesiones
 
-# Usar un directorio temporal proporcionado por el sistema
-DOWNLOAD_FOLDER = tempfile.gettempdir()
-
+DOWNLOAD_FOLDER = 'downloads'  # Carpeta para guardar las descargas
 
 # Crear la carpeta de descargas si no existe
 if not os.path.exists(DOWNLOAD_FOLDER):
@@ -69,4 +67,4 @@ def download_file(filename):
     return send_file(file_path, as_attachment=True, download_name=urllib.parse.unquote(filename))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
