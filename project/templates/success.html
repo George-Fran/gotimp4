@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga Completa</title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>¡Descarga Completa!</h1>
+        <object type="image/svg+xml" data="/static/img/success.svg" width="400" height="400">
+            Tu navegador no soporta SVGs.
+         </object>
+        <p class="parrafo">Tu video se ha descargado correctamente.</p>
+        <a class="boton-d" id="download-link" href="/download/{{ file_name }}">Guardar Video</a>
+        <script>
+            document.getElementById('download-link').addEventListener('click', function() {
+                setTimeout(function() {
+                    window.location.href = "/";
+                }, 3000);  // Redirigir después de 3 segundos
+            });
+        </script>
+    </main>
+</body>
+</html>

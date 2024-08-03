@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Video de YouTube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="contenedor-n nav-flex">
+        <div class="nav__logo">
+            <img src="/static/img/logo.svg" alt="logo imagen">
+        </div>
+        <div class="menu">
+            <img src="/static/img/icon-menu.svg" alt="">
+        </div>
+        <div class="nw no-black">
+        </div>
+        <ul class="barra dp-nav nav-close">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="https://www.geogz.xyz" target="_blank">Web</a></li>
+            <li><a href="https://www.instagram.com/geogz.dev/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@Geogz" target="_blank">YouTube</a></li>
+            <li><a href="#">Correo</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Descargar Video de You<span>Tube</span></h1>
+        <!-- <form class="formulario" id="download-form" method="POST" action="/" onsubmit="showLoading()">
+            <input class="input-text" placeholder="Pega tu link de YouTube aquí" type="text" id="url" name="url" required>
+            <button class="boton" type="submit">Descargar</button>
+        </form> -->
+        <div class="formulario" id="download-form">
+            <input class="input-text" placeholder="Pega tu link de YouTube aquí" type="text" id="url" name="url"
+                required>
+            <button class="boton">Convertir</button>
+        </div>
+        <div class="previo">
+            <div class="previo-imagen"></div>
+            <div class="previo-contenido">
+                <div class="previo-titulo">
+
+                </div>
+                <form class="formulariop" id="download-form-submit" method="POST" action="/" onsubmit="showLoading()"
+                    style="display: none;">
+                    <input type="hidden" id="video-url" name="url">
+                    <button class="boton-d" type="submit">Descargar</button>
+                </form>
+                <div id="loading"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/nav.js"></script>
+</body>
+
+</html>

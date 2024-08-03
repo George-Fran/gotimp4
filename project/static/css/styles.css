@@ -1,0 +1,247 @@
+/* styles.css */
+:root {
+    --blanco: #fff;
+    --negro: #041C32;
+    --principal: #cca34b;
+    --rojo: #b32222;
+}
+
+/* Globales */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--negro);
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    width: min(90%, 120rem);
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20rem;
+}
+.contenedor-n {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+
+/* Nav */
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6rem;
+}
+.menu{
+    display: none;
+}
+
+.barra {
+    display: flex;
+    gap: 3.7rem;
+    list-style: none;
+}
+
+.barra li a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.barra li a:hover {
+    color: var(--principal);
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .menu{
+        display: flex;
+        cursor: pointer;
+    }
+    .fix{
+        position: fixed;
+        right: 2rem;
+        z-index: 9999993;
+    }
+    .nw{
+        background: #0000005e;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999999;
+    }
+    .barra{
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: var(--blanco);
+        padding: 3rem;
+        width: 30rem;
+        z-index: 9999992;
+        transform: translateX(0);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .no-black{
+        display: none;
+    }
+    .barra li:first-of-type{
+        margin-top: 17rem;
+    }
+    .barra li a{
+        display: block;
+        margin-top: 2.5rem;
+        font-weight: 700;
+        color: var(--negro);
+    }
+
+    .nav-close{
+        opacity: 0;
+        transform: translateX(30rem);
+    }
+    .dp-nav{
+        display: none;
+    }
+}
+
+
+h1 {
+    font-size: 5rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+h1 span {
+    color: var(--blanco);
+    background-color: var(--rojo);
+    border-radius: 1.5rem;
+    margin-left: .8rem;
+    padding: .5rem .6rem;
+}
+
+.formulario {
+    position: relative;
+    width: 90rem;
+    margin-top: 2rem;
+}
+
+.input-text {
+    padding: 2rem;
+    width: 100%;
+    border: 1.5px solid var(--principal);
+    border-radius: 1rem;
+    outline: none;
+}
+
+.input-text:focus-within {
+    transition: box-shadow .2s ease;
+    box-shadow: 0 0 10px 2px var(--principal);
+}
+
+.boton {
+    padding: 1.7rem 2rem;
+    position: absolute;
+    right: -25px;
+    bottom: 4px;
+    color: var(--blanco);
+    border: none;
+    background-color: var(--principal);
+    cursor: pointer;
+}
+
+.boton-d {
+    margin-top: 1.5rem;
+    padding: 1.7rem 2rem;
+    border-radius: .7rem;
+    color: var(--blanco);
+    border: none;
+    background-color: var(--principal);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.previo {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    max-width: 100rem;
+}
+
+.previo h2 {
+    color: var(--blanco);
+    margin-top: 2rem;
+}
+
+.previo img {
+    width: 100%;
+}
+
+#loading {
+    display: none;
+    transform: translate(-50%, -50%);
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    margin-top: 2rem;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.parrafo {
+    color: var(--blanco);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contenedor{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    .formulario{
+        width: 100%;
+    }
+    .contenedor {
+        display: block;
+    }
+    .input-text{
+        width: 100%;
+    }
+    .boton {
+        position: static;
+        display: block;
+        width: 100%;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    }
+    .previo{
+        display: block;
+    }
+}
