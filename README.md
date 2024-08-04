@@ -51,3 +51,13 @@ Este proyecto es una aplicación para descargar videos de Youtube a la maxima ca
 
 - [@geogz](https://www.github.com/George-Fran)
 
+
+## Screenshots
+
+![App Screenshot](https://i.postimg.cc/cJQ6LrmM/240803-23h08m34s-screenshot.png)
+
+
+## Authors
+
+- [@geogz](https://www.github.com/George-Fran)
+
