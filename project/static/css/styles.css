@@ -31,6 +31,7 @@ body {
     margin: 0 auto;
     margin-top: 20rem;
 }
+
 .contenedor-n {
     width: min(90%, 120rem);
     margin: 0 auto;
@@ -44,7 +45,8 @@ body {
     align-items: center;
     margin-top: 6rem;
 }
-.menu{
+
+.menu {
     display: none;
 }
 
@@ -65,16 +67,18 @@ body {
 }
 
 @media (max-width: 480px) {
-    .menu{
+    .menu {
         display: flex;
         cursor: pointer;
     }
-    .fix{
+
+    .fix {
         position: fixed;
         right: 2rem;
         z-index: 9999993;
     }
-    .nw{
+
+    .nw {
         background: #0000005e;
         position: fixed;
         top: 0;
@@ -83,7 +87,8 @@ body {
         right: 0;
         z-index: 999999;
     }
-    .barra{
+
+    .barra {
         display: block;
         position: fixed;
         right: 0;
@@ -96,24 +101,28 @@ body {
         transform: translateX(0);
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .no-black{
+
+    .no-black {
         display: none;
     }
-    .barra li:first-of-type{
+
+    .barra li:first-of-type {
         margin-top: 17rem;
     }
-    .barra li a{
+
+    .barra li a {
         display: block;
         margin-top: 2.5rem;
         font-weight: 700;
         color: var(--negro);
     }
 
-    .nav-close{
+    .nav-close {
         opacity: 0;
         transform: translateX(30rem);
     }
-    .dp-nav{
+
+    .dp-nav {
         display: none;
     }
 }
@@ -192,29 +201,18 @@ h1 span {
     width: 100%;
 }
 
-#loading {
+/* HTML: <div class="loader"></div> */
+.loader {
     display: none;
-    transform: translate(-50%, -50%);
-    border: 16px solid #f3f3f3;
-    /* Light grey */
-    border-top: 16px solid #3498db;
-    /* Blue */
-    border-radius: 50%;
-    width: 60px;
     margin-top: 2rem;
-    height: 60px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}
 
 .parrafo {
     color: var(--blanco);
@@ -222,16 +220,19 @@ h1 span {
 }
 
 @media (max-width: 768px) {
-    .contenedor{
+    .contenedor {
         margin-top: 5rem;
         margin-bottom: 4rem;
     }
-    .formulario{
+
+    .formulario {
         width: 100%;
     }
-    .input-text{
+
+    .input-text {
         width: 100%;
     }
+
     .boton {
         position: static;
         display: block;
@@ -239,7 +240,8 @@ h1 span {
         margin-top: 2rem;
         border-radius: 1rem;
     }
-    .previo{
+
+    .previo {
         display: block;
     }
 }

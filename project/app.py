@@ -3,12 +3,12 @@ import yt_dlp
 import os
 import shutil
 import tempfile
-import urllib.parse  # Importar urllib.parse para manejar la codificación y decodificación de URLs
+import urllib.parse 
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Necesario para usar sesiones
+app.secret_key = 'supersecretkey' 
 
-DOWNLOAD_FOLDER = 'downloads'  # Carpeta para guardar las descargas
+DOWNLOAD_FOLDER = 'downloads'
 
 # Crear la carpeta de descargas si no existe
 if not os.path.exists(DOWNLOAD_FOLDER):
@@ -30,7 +30,7 @@ def index():
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info_dict = ydl.extract_info(video_url, download=True)
                 file_name = ydl.prepare_filename(info_dict)
-                file_name = file_name.replace('.webm', '.mp4')  # Asegurarse de que la extensión sea .mp4
+                file_name = file_name.replace('.webm', '.mp4') 
                 dest_file_name = os.path.join(DOWNLOAD_FOLDER, os.path.basename(file_name))
                 
                 # Mover el archivo a la carpeta de descargas
@@ -39,7 +39,6 @@ def index():
             # Guardar el nombre del archivo en la sesión para usarlo después
             session['file_name'] = os.path.basename(dest_file_name)
 
-            # Redirigir a la página de éxito
             return redirect(url_for('success'))
 
     return render_template('index.html')
